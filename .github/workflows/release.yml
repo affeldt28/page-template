@@ -14,19 +14,6 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3.8.1
-        with:
-          node-version: 18
-
-      - name: 📄 Update package.json to only include prettier
-        run: |
-          updated=`cat package.json | jq 'del(.dependencies) | .devDependencies |= (to_entries | map(select(.key | match("prettier";"i"))) | from_entries)'`
-          echo $updated > package.json
-
-      - name: 💿 Install prettier
-        run: npm install
-
       - name: 📝 Update CHANGELOG
         id: changelog
         uses: requarks/changelog-action@v1.8.2
@@ -43,9 +30,6 @@ jobs:
           name: ${{ github.ref_name }}
           body: ${{ steps.changelog.outputs.changes }}
           token: ${{ github.token }}
-
-      - name: 🎨 Format CHANGELOG.md
-        run: npx prettier --write CHANGELOG.md
 
       - name: ⬆️ Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
