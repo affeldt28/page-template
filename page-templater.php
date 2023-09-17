@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Page Template Plugin
-Plugin URI: https://github.com/affeldt28/page-templatee
+Plugin URI: https://github.com/affeldt28/page-templater
 Description: Dynamically create WordPress Page Templates directly through PHP.
 Version: 2.0.0
 Author: Marvin Affeldt
