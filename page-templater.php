@@ -1,10 +1,11 @@
 <?php
 /*
-Plugin Name: Page Template Plugin : 'Good To Be Bad'
-Plugin URI: http://www.wpexplorer.com/wordpress-page-templates-plugin/
-Version: 1.1.0
-Author: WPExplorer
-Author URI: http://www.wpexplorer.com/
+Plugin Name: Page Template Plugin
+Plugin URI: https://github.com/affeldt28/page-templatee
+Description: Dynamically create WordPress Page Templates directly through PHP.
+Version: 2.0.0
+Author: Marvin Affeldt
+Author URI: https://github.com/affeldt28
 */
 
 class PageTemplater {
@@ -75,7 +76,7 @@ class PageTemplater {
 
 		// Add your templates to this array.
 		$this->templates = array(
-			'goodtobebad-template.php' => 'It\'s Good to Be Bad',
+			'templates/parent-menu.php' => 'Parent Menu',
 		);
 
 	}
